@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>82 Reasons Why I Love Chelsea Shum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> <!-- Adding cursive font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> 
     <style>
-        /* Background and animation settings */
         body {
-            font-family: 'Dancing Script', cursive; /* Cursive font */
-            background-color: #87CEEB; /* Sky blue background */
+            font-family: 'Dancing Script', cursive;
+            background-color: #87CEEB;
             color: white;
             text-align: center;
             padding: 50px;
             position: relative;
-            overflow-y: auto; /* Allow scrolling when content exceeds the height */
-            height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+            overflow-y: auto;
+            height: 100vh;
         }
 
-        /* Centering content */
         .content {
             position: relative;
             z-index: 10;
@@ -28,38 +26,6 @@
             justify-content: center;
         }
 
-        /* Heart raining animation */
-        .heart {
-            position: absolute;
-            font-size: 30px;
-            color: #ff1493; /* Hot pink hearts */
-            animation: rain 5s infinite;
-        }
-
-        /* Keyframes for heart raining animation */
-        @keyframes rain {
-            0% {
-                top: -50px;
-                opacity: 1;
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-            }
-        }
-
-        /* Heart generation */
-        .heart:nth-child(1) { left: 10%; animation-duration: 4s; }
-        .heart:nth-child(2) { left: 20%; animation-duration: 5s; }
-        .heart:nth-child(3) { left: 30%; animation-duration: 6s; }
-        .heart:nth-child(4) { left: 40%; animation-duration: 3s; }
-        .heart:nth-child(5) { left: 50%; animation-duration: 7s; }
-        .heart:nth-child(6) { left: 60%; animation-duration: 6s; }
-        .heart:nth-child(7) { left: 70%; animation-duration: 5s; }
-        .heart:nth-child(8) { left: 80%; animation-duration: 4s; }
-        .heart:nth-child(9) { left: 90%; animation-duration: 3s; }
-
-        /* Main message container */
         .message {
             font-size: 24px;
             color: #2e8b57;
@@ -77,17 +43,15 @@
             color: #ff1493;
         }
 
-        /* Style for Chelsea's picture */
         #chelseaPic {
             width: 300px;
             height: 300px;
             border-radius: 50%;
             margin-top: 30px;
-            border: 8px solid #ffcc00; /* Golden border */
+            border: 8px solid #ffcc00;
             box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
         }
 
-        /* Style for the Sanrio egg */
         #sanrioEgg {
             width: 150px;
             height: 150px;
@@ -95,115 +59,149 @@
             border-radius: 50%;
         }
 
-        /* Starry sparkling background effect */
-        @keyframes starry-sparkle {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        .nav-buttons {
+            margin-top: 20px;
         }
 
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .stars span {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.8); /* White stars */
-            border-radius: 50%;
-            animation: starry-sparkle 1.5s infinite;
-        }
-
-        .stars span:nth-child(1) { width: 8px; height: 8px; animation-duration: 2s; top: 20%; left: 30%; }
-        .stars span:nth-child(2) { width: 12px; height: 12px; animation-duration: 3s; top: 50%; left: 50%; }
-        .stars span:nth-child(3) { width: 10px; height: 10px; animation-duration: 1s; top: 60%; left: 70%; }
-        .stars span:nth-child(4) { width: 9px; height: 9px; animation-duration: 1.8s; top: 10%; left: 80%; }
-        .stars span:nth-child(5) { width: 7px; height: 7px; animation-duration: 2.2s; top: 80%; left: 20%; }
-
-        /* Style for the button */
-        .love-button {
+        .nav-buttons button {
             font-size: 18px;
-            padding: 15px 30px;
-            background-color: #ffcc00; /* Golden color for button */
-            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ffcc00;
+            color: white;
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            position: fixed; /* Fix the button at the bottom */
-            bottom: 20px; /* Distance from the bottom */
-            left: 50%;
-            transform: translateX(-50%); /* Center horizontally */
             font-family: 'Times New Roman', Times, serif;
             transition: background-color 0.3s;
         }
 
-        .love-button:hover {
+        .nav-buttons button:hover {
             background-color: #ffb400;
         }
     </style>
 </head>
 <body>
-
     <div class="content">
         <h1>82 Reasons Why I Love Chelsea Shum</h1>
-
-        <!-- Chelsea's picture -->
         <img src="IMG_1587.JPG" alt="Chelsea" id="chelseaPic">
-        
-        <!-- Sanrio Egg image -->
         <img src="203-2036142_all-inspired-from-scrolling-through-the-sanrio-insta.png" alt="Sanrio Egg" id="sanrioEgg">
-        
-        <!-- Display the love message -->
-        <div class="message" id="loveMessage">
-            <!-- Love message content will go here -->
+        <div class="message" id="loveMessage"></div>
+        <div class="nav-buttons">
+            <button onclick="previousMessage()">⬅️ Back</button>
+            <button onclick="nextMessage()">More Love ➡️</button>
         </div>
     </div>
 
-    <!-- Heart emojis to create raining effect -->
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-
-    <!-- Stars effect -->
-    <div class="stars">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Button for more love (refresh page) -->
-    <button class="love-button" onclick="window.location.reload();">Click for more love ❤️</button>
-
     <script>
-        // Array of love messages
         const loveMessages = [
-            "I love you more than words can describe, Chelsea. 💖",
-            "Every moment with you feels like a dream come true. I love you so much! 😘",
-            "You are the love of my life, and nothing makes me happier than being with you. 💙",
-            "I can't imagine my world without you in it. I love you endlessly, Chelsea! 🌟",
-            "My love for you grows stronger each and every day, Chelsea. 💕",
-            "You make my life so much better just by being in it. I love you beyond measure. 💫"
+        "1. Your smile shines brighter than the morning sun",
+    "2. With you by my side, life is twice as fun",
+    "3. Your laughter is a melody sweet and true",
+    "4. A song I can listen to all day through",
+    "5. Your kindness touches everyone you meet",
+    "6. You make the world feel warm and sweet",
+    "7. You see the best in those around",
+    "8. Lifting others when they are down",
+    "9. Your eyes hold stories, deep and bright",
+    "10. A universe of love and light",
+    "11. Your heart is golden, pure and kind",
+    "12. A love like yours is rare to find",
+    "13. You cheer me up when times are tough",
+    "14. Just one hug from you is just enough",
+    "15. You believe in me when I forget",
+    "16. You remind me that there is no need to fret",
+    "17. You’re patient, caring, always true",
+    "18. Every day, I’m thankful for you",
+    "19. You listen, even when words are few",
+    "20. And somehow you always know what to do",
+    "21. You look so cute in everything",
+    "22. Like a princess without a ring",
+    "23. Your eyes could light up the darkest skies",
+    "24. A smile oh so hypnotizing",
+    "25. You pout when things don’t go your way",
+    "26. But even that is cute, I’d say",
+    "27. The way you laugh, the way you dance",
+    "28. Every moment with you feels like a chance",
+    "29. You take my hoodies, which I’m proud",
+    "30. And suddenly my heart‘s unbound",
+    "31. You love Disney, your happy place",
+    "32. With you, every moment is full of grace",
+    "33. You race on BMX, fast and bold",
+    "34. A heart so fierce, a soul so gold",
+    "35. You love the color blue, so true",
+    "36. My favorite color is just you",
+    "37. You light up my world in ways unknown",
+    "38. You make my heart feel safe like home",
+    "39. You get excited over little things",
+    "40. And that’s why you’re an angel, you have wings",
+    "41. You are always there, no matter when",
+    "42. My lover, you won’t ever end",
+    "43. You listen, laugh, and hold me high",
+    "44. With you, there’s no need to try",
+    "45. You help me with family too",
+    "46. And show me love in all you do",
+    "47. You clean my car without a word",
+    "48. And suddenly, my day is cured",
+    "49. You make life sweet, you make it bright",
+    "50. I dream of you every night",
+    "51. You love me even at my worst",
+    "52. And somehow still put me first",
+    "53. You are strong, determined, full of fire",
+    "54. A girl who lifts me higher",
+    "55. You race through life with fearless grace",
+    "56. And make this world a better place",
+    "57. You hold my hand and time stands still",
+    "58. With you, there’s nothing I can’t fulfill",
+    "59. You cuddle me close when nights are cold",
+    "60. And in your arms, I feel so whole",
+    "61. You make me laugh, you make me cry",
+    "62. But only tears of joy, oh my",
+    "63. You teach me love in ways so true",
+    "64. There’s no one else but you, you, you",
+    "65. You’re my best friend, my partner too",
+    "66. Life’s an adventure when it’s with you",
+    "67. You believe in love, in dreams, in fate",
+    "68. With you, my heart just resonates",
+    "69. You make me better, help me grow",
+    "70. And there’s one thing I want you to know",
+    "71. You are my heart, my guiding star",
+    "72. No matter where, no matter how far",
+    "73. You deserve the world and so much more",
+    "74. But all I have is mine to pour",
+    "75. My heart, my soul, my love, my all",
+    "76. To catch you if you ever fall",
+    "77. You make my world a dream so true",
+    "78. And every heartbeat whispers you",
+    "79. There’s nothing more that I can say",
+    "80. Except that I love you more each day",
+    "81. And now with all my heart, so true",
+    "82. Chelsea Shum, will you be my Valentine too?"
         ];
 
-        // Randomly choose a love message
-        const randomMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+        let currentMessageIndex = 0;
 
-        // Display the love message on the page
-        document.getElementById('loveMessage').innerHTML = `<span class="heart-symbol">❤️</span> ${randomMessage} <span class="heart-symbol">❤️</span>`;
+        function updateLoveMessage() {
+            document.getElementById('loveMessage').innerHTML = `<span class="heart-symbol">❤️</span> ${loveMessages[currentMessageIndex]} <span class="heart-symbol">❤️</span>`;
+        }
+
+        function nextMessage() {
+            if (currentMessageIndex < loveMessages.length - 1) {
+                currentMessageIndex++;
+                updateLoveMessage();
+            }
+        }
+
+        function previousMessage() {
+            if (currentMessageIndex > 0) {
+                currentMessageIndex--;
+                updateLoveMessage();
+            }
+        }
+
+        updateLoveMessage();
     </script>
 
 </body>
 </html>
+
