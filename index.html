@@ -14,7 +14,8 @@
             text-align: center;
             padding: 50px;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto; /* Allow scrolling when content exceeds the height */
+            height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
         }
 
         /* Centering content */
@@ -133,8 +134,11 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            margin-top: 30px;
-            font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+            position: fixed; /* Fix the button at the bottom */
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-family: 'Times New Roman', Times, serif;
             transition: background-color 0.3s;
         }
 
@@ -158,9 +162,6 @@
         <div class="message" id="loveMessage">
             <!-- Love message content will go here -->
         </div>
-
-        <!-- Button for more love (refresh page) -->
-        <button class="love-button" onclick="window.location.reload();">Click for more love ❤️</button>
     </div>
 
     <!-- Heart emojis to create raining effect -->
@@ -182,6 +183,9 @@
         <span></span>
         <span></span>
     </div>
+
+    <!-- Button for more love (refresh page) -->
+    <button class="love-button" onclick="window.location.reload();">Click for more love ❤️</button>
 
     <script>
         // Array of love messages
@@ -207,3 +211,4 @@
 
 </body>
 </html>
+
