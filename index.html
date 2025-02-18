@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>82 Reasons Why I Love Chelsea Shum</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> 
     <style>
-
-
         body {
             font-family: 'Dancing Script', cursive;
             background-color: #87CEEB;
@@ -33,7 +29,7 @@
 
         .message {
             font-size: 24px;
-            color: #2e8b57;
+            color: #9c65c6;
             margin-top: 20px;
             padding: 20px;
             background-color: #ffffff;
@@ -42,13 +38,15 @@
             position: relative;
             z-index: 10;
         }
+
         body {
-        overflow-y: auto; /* Enables vertical scrolling */
-        height: 100vh; /* Ensures the body takes the full viewport height */
-    }
+            overflow-y: auto;
+            height: 100vh;
+        }
+
         .heart-symbol {
             font-size: 30px;
-            color: #ff1493;
+            color: #14a5ff;
         }
 
         #chelseaPic {
@@ -138,6 +136,48 @@
                 opacity: 0;
             }
         }
+
+        /* Cute and pixelated dropdown */
+        #loveMessageDropdown {
+            font-size: 18px;
+            padding: 10px;
+            background-color: #ffcc00;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+            transition: all 0.3s ease;
+            appearance: none;
+            text-align: center;
+        }
+
+        #loveMessageDropdown:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 1);
+        }
+
+        /* Pixelated effect for dropdown */
+        #loveMessageDropdown {
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        #loveMessageDropdown option {
+            background-color: #ff1493;
+            color: white;
+            padding: 10px;
+            font-family: 'Dancing Script', cursive;
+            border: none;
+            text-align: center;
+        }
+
+        #loveMessageDropdown option:hover {
+            background-color: #ff1f70;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -149,6 +189,10 @@
         <div class="nav-buttons">
             <button onclick="previousMessage()">⬅️ Back</button>
             <button onclick="nextMessage()">More Love ➡️</button>
+            <!-- Dropdown for love messages -->
+            <select id="loveMessageDropdown" onchange="selectMessage()">
+                <option value="">Select a message</option>
+            </select>
         </div>
     </div>
 
@@ -160,10 +204,10 @@
 
     <script>
         const loveMessages = [
-        "1. Your smile shines brighter than the morning sun",
-    "2. With you by my side, life is twice as fun",
-    "3. Your laughter is a melody sweet and true",
-    "4. A song I can listen to all day through",
+            "1. Your smile shines brighter than the morning sun",
+            "2. With you by my side, life is twice as fun",
+            "3. Your laughter is a melody sweet and true",
+            "4. A song I can listen to all day through",
     "5. Your kindness touches everyone you meet",
     "6. You make the world feel warm and sweet",
     "7. You see the best in those around",
@@ -242,6 +286,7 @@
     "80. Except that I love you more each day",
     "81. And now with all my heart, so true",
     "82. Chelsea Shum, will you be my Valentine too?"
+            // Add more love messages as needed
         ];
 
         let currentMessageIndex = 0;
@@ -264,7 +309,29 @@
             }
         }
 
+        // Populate the dropdown with love messages
+        function populateDropdown() {
+            const dropdown = document.getElementById("loveMessageDropdown");
+            loveMessages.forEach((message, index) => {
+                const option = document.createElement("option");
+                option.value = index;
+                option.textContent = message; // Add the actual love message to the dropdown
+                dropdown.appendChild(option);
+            });
+        }
+
+        // Function to change the message when an option is selected from the dropdown
+        function selectMessage() {
+            const dropdown = document.getElementById("loveMessageDropdown");
+            const selectedIndex = dropdown.value;
+            if (selectedIndex !== "") {
+                currentMessageIndex = parseInt(selectedIndex);
+                updateLoveMessage();
+            }
+        }
+
         updateLoveMessage();
+        populateDropdown();
 
         function createHearts() {
             const heart = document.createElement("div");
