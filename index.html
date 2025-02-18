@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Dancing Script', cursive;
-            background: linear-gradient(to bottom, #6EC1E4, #4A90D6); /* Vibrant baby blue to deeper baby blue gradient */
+            background: linear-gradient(to bottom, #6EC1E4, #4A90D6);
             color: white;
             text-align: center;
             padding: 50px;
@@ -26,7 +26,6 @@
             align-items: center;
             justify-content: center;
         }
-
 
         .message {
             font-size: 24px;
@@ -64,6 +63,12 @@
             height: 150px;
             margin-top: 30px;
             border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #sanrioEgg:hover {
+            transform: scale(1.1);
         }
 
         .nav-buttons {
@@ -96,8 +101,6 @@
             user-select: none;
             opacity: 0.8;
         }
-
-
 
         @keyframes fall {
             0% {
@@ -139,63 +142,17 @@
                 opacity: 0;
             }
         }
-
-        /* Cute and pixelated dropdown */
-        #loveMessageDropdown {
-            font-size: 18px;
-            padding: 10px;
-            background-color: #ffcc00;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: 'Dancing Script', cursive;
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
-            transition: all 0.3s ease;
-            appearance: none;
-            text-align: center;
-        }
-
-        #loveMessageDropdown:focus {
-            outline: none;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 1);
-        }
-
-        /* Pixelated effect for dropdown */
-        #loveMessageDropdown {
-            image-rendering: pixelated;
-            -ms-interpolation-mode: nearest-neighbor;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-        }
-
-        #loveMessageDropdown option {
-            background-color: #ff1493;
-            color: white;
-            padding: 10px;
-            font-family: 'Dancing Script', cursive;
-            border: none;
-            text-align: center;
-        }
-
-        #loveMessageDropdown option:hover {
-            background-color: #ff1f70;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-        }
     </style>
 </head>
 <body>
     <div class="content">
         <h1>82 Reasons Why I Love Chelsea Shum</h1>
         <img src="IMG_6201.jpg" alt="Chelsea" id="chelseaPic">
-        <img src="203-2036142_all-inspired-from-scrolling-through-the-sanrio-insta.png" alt="Sanrio Egg" id="sanrioEgg">
+        <img src="203-2036142_all-inspired-from-scrolling-through-the-sanrio-insta.png" alt="Sanrio Egg" id="sanrioEgg" onclick="showLoveMessage()">
         <div class="message" id="loveMessage"></div>
         <div class="nav-buttons">
             <button onclick="previousMessage()">⭂ Last Line</button>
             <button onclick="nextMessage()">Next Line ⭈</button>
-            <!-- Dropdown for love messages -->
-            <select id="loveMessageDropdown" onchange="selectMessage()">
-                <option value="">🩵 Read All 🩵 </option>
-            </select>
         </div>
     </div>
 
@@ -210,91 +167,97 @@
             "1. Your smile shines brighter than the morning sun",
             "2. With you by my side, life is twice as fun",
             "3. Your laughter is a melody sweet and true",
-            "4. A song I can listen to all day through",
-            "5. Your kindness touches everyone you meet",
-            "6. You make the world feel warm and sweet",
-            "7. You see the best in those around",
-            "8. Lifting others when they are down",
-            "9. Your eyes hold stories, deep and bright",
-            "10. A universe of love and light",
-            "11. Your heart is golden, pure and kind",
-            "12. A love like yours is rare to find",
-            "13. You cheer me up when times are tough",
-            "14. Just one hug from you is just enough",
-            "15. You believe in me when I forget",
-            "16. You remind me that there is no need to fret",
-            "17. You’re patient, caring, always true",
-            "18. Every day, I’m thankful for you",
-            "19. You listen, even when words are few",
-            "20. And somehow you always know what to do",
-            "21. You look so cute in everything",
-            "22. Like a princess without a ring",
-            "23. Your eyes could light up the darkest skies",
-            "24. A smile oh so hypnotizing",
-            "25. You pout when things don’t go your way",
-            "26. But even that is cute, I’d say",
-            "27. The way you laugh, the way you dance",
-            "28. Every moment with you feels like a chance",
-            "29. You take my hoodies, wear them proud",
-            "30. And suddenly my heart‘s unbound",
-            "31. You love Disney, your happy place",
-            "32. With you, every moment is full of grace",
-            "33. You race on BMX, fast and bold",
-            "34. A heart so fierce, a soul so gold",
-            "35. You love the color blue, so true",
-            "36. My favorite color is just you",
-            "37. You light up my world in ways unknown",
-            "38. You make my heart feel safe like home",
-            "39. You get excited over little things",
-            "40. And that’s why you’re an angel, you have wings",
-            "41. You are always there, no matter when",
-            "42. My love for you won’t ever end",
-            "43. You listen, laugh, and hold me high",
-            "44. With you, there’s no need to try",
-            "45. You help me with family too",
-            "46. And show me love in all you do",
-            "47. You clean my car without a word",
-            "48. And suddenly, my day is cured",
-            "49. You make life sweet, you make it bright",
-            "50. I dream of you every night",
-            "51. You love me even at my worst",
-            "52. And somehow still put me first",
-            "53. You are strong, determined, full of fire",
-            "54. A girl who lifts me higher",
-            "55. You race through life with fearless grace",
-            "56. And make this world a better place",
-            "57. You hold my hand and time stands still",
-            "58. With you, there’s nothing I can’t fulfill",
-            "59. You cuddle me close when nights are cold",
-            "60. And in your arms, I feel so whole",
-            "61. You make me laugh, you make me cry",
-            "62. But only tears of joy, oh my",
-            "63. You teach me love in ways so true",
-            "64. There’s no one else but you, you, you",
-            "65. You’re my best friend, my partner too",
-            "66. Life’s an adventure when it’s with you",
-            "67. You believe in love, in dreams, in fate",
-            "68. With you, my heart just resonates",
-            "69. You make me better, help me grow",
-            "70. And there’s one thing I want you to know",
-            "71. You are my heart, my guiding star",
-            "72. No matter where, no matter how far",
-            "73. You deserve the world and so much more",
-            "74. But all I have is mine to pour",
-            "75. My heart, my soul, my love, my all",
-            "76. To catch you if you ever fall",
-            "77. You make my world a dream so true",
-            "78. And every heartbeat whispers you",
-            "79. There’s nothing more that I can say",
-            "80. Except that I love you more each day",
-            "81. And now with all my heart, so true",
-            "82. Chelsea Shum, will you be my Valentine too?"
+    "4. A song I can listen to all day through",
+    "5. Your kindness touches everyone you meet",
+    "6. You make the world feel warm and sweet",
+    "7. You see the best in those around",
+    "8. Lifting others when they are down",
+    "9. Your eyes hold stories, deep and bright",
+    "10. A universe of love and light",
+    "11. Your heart is golden, pure and kind",
+    "12. A love like yours is rare to find",
+    "13. You cheer me up when times are tough",
+    "14. Just one hug from you is just enough",
+    "15. You believe in me when I forget",
+    "16. You remind me that there is no need to fret",
+    "17. You’re patient, caring, always true",
+    "18. Every day, I’m thankful for you",
+    "19. You listen, even when words are few",
+    "20. And somehow you always know what to do",
+    "21. You look so cute in everything",
+    "22. Like a princess without a ring",
+    "23. Your eyes could light up the darkest skies",
+    "24. A smile oh so hypnotizing",
+    "25. You pout when things don’t go your way",
+    "26. But even that is cute, I’d say",
+    "27. The way you laugh, the way you dance",
+    "28. Every moment with you feels like a chance",
+    "29. You take my hoodies, wear them proud",
+    "30. And suddenly my heart‘s unbound",
+    "31. You love Disney, your happy place",
+    "32. With you, every moment is full of grace",
+    "33. You race on BMX, fast and bold",
+    "34. A heart so fierce, a soul so gold",
+    "35. You love the color blue, so true",
+    "36. My favorite color is just you",
+    "37. You light up my world in ways unknown",
+    "38. You make my heart feel safe like home",
+    "39. You get excited over little things",
+    "40. And that’s why you’re an angel, you have wings",
+    "41. You are always there, no matter when",
+    "42. My love for you won’t ever end",
+    "43. You listen, laugh, and hold me high",
+    "44. With you, there’s no need to try",
+    "45. You help me with family too",
+    "46. And show me love in all you do",
+    "47. You clean my car without a word",
+    "48. And suddenly, my day is cured",
+    "49. You make life sweet, you make it bright",
+    "50. I dream of you every night",
+    "51. You love me even at my worst",
+    "52. And somehow still put me first",
+    "53. You are strong, determined, full of fire",
+    "54. A girl who lifts me higher",
+    "55. You race through life with fearless grace",
+    "56. And make this world a better place",
+    "57. You hold my hand and time stands still",
+    "58. With you, there’s nothing I can’t fulfill",
+    "59. You cuddle me close when nights are cold",
+    "60. And in your arms, I feel so whole",
+    "61. You make me laugh, you make me cry",
+    "62. But only tears of joy, oh my",
+    "63. You teach me love in ways so true",
+    "64. There’s no one else but you, you, you",
+    "65. You’re my best friend, my partner too",
+    "66. Life’s an adventure when it’s with you",
+    "67. You believe in love, in dreams, in fate",
+    "68. With you, my heart just resonates",
+    "69. You make me better, help me grow",
+    "70. And there’s one thing I want you to know",
+    "71. You are my heart, my guiding star",
+    "72. No matter where, no matter how far",
+    "73. You deserve the world and so much more",
+    "74. But all I have is mine to pour",
+    "75. My heart, my soul, my love, my all",
+    "76. To catch you if you ever fall",
+    "77. You make my world a dream so true",
+    "78. And every heartbeat whispers you",
+    "79. There’s nothing more that I can say",
+    "80. Except that I love you more each day",
+    "81. And now with all my heart, so true",
+    "82. Chelsea Shum, will you be my Valentine too?"
+            // Add more love messages as needed
         ];
 
         let currentMessageIndex = 0;
+        let allMessagesVisible = false;
 
         function updateLoveMessage() {
-            document.getElementById('loveMessage').innerHTML = `<span class="heart-symbol">❤️</span> ${loveMessages[currentMessageIndex]} <span class="heart-symbol">❤️</span>`;
+            if (!allMessagesVisible) {
+                document.getElementById('loveMessage').innerHTML = `<span class="heart-symbol">❤️</span> ${loveMessages[currentMessageIndex]} <span class="heart-symbol">❤️</span>`;
+            } else {
+                document.getElementById('loveMessage').innerHTML = `<span class="heart-symbol">❤️</span> ${loveMessages.join('<br><span class="heart-symbol">❤️</span>')} <span class="heart-symbol">❤️</span>`;
+            }
         }
 
         function nextMessage() {
@@ -311,29 +274,13 @@
             }
         }
 
-        // Populate the dropdown with love messages
-        function populateDropdown() {
-            const dropdown = document.getElementById("loveMessageDropdown");
-            loveMessages.forEach((message, index) => {
-                const option = document.createElement("option");
-                option.value = index;
-                option.textContent = message; // Add the actual love message to the dropdown
-                dropdown.appendChild(option);
-            });
-        }
-
-        // Function to change the message when an option is selected from the dropdown
-        function selectMessage() {
-            const dropdown = document.getElementById("loveMessageDropdown");
-            const selectedIndex = dropdown.value;
-            if (selectedIndex !== "") {
-                currentMessageIndex = parseInt(selectedIndex);
-                updateLoveMessage();
-            }
+        function showLoveMessage() {
+            allMessagesVisible = !allMessagesVisible; // toggle the visibility state
+            currentMessageIndex = 0; // reset to the first message when toggling
+            updateLoveMessage(); // update the message display
         }
 
         updateLoveMessage();
-        populateDropdown();
 
         function createHearts() {
             const heart = document.createElement("div");
